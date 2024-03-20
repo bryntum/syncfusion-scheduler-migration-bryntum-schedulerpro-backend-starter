@@ -1,8 +1,8 @@
-# Migrate from Syncfusion Scheduler to Bryntum Scheduler Pro - back end starter repository
+# Migrate from Syncfusion Scheduler to Bryntum Scheduler Pro - backend starter repository
 
 ## Setup a MySQL database locally
 
-We’ll install MySQL Server and MySQL Workbench. MySQL Workbench is a MySQL GUI that we’ll use to create a database with tables for the Scheduler data and to run queries. Download MySQL Server and MySQL Workbench from the [MySQL community downloads page](https://dev.mysql.com/downloads/). If you’re using Windows, you can use the [MySQL Installer for Windows](https://dev.mysql.com/downloads/installer/) to download the MySQL products. Use the default configurations when configuring MySQL Server and Workbench. Make sure that you configure the MySQL Server to start at system startup for your convenience.
+We’ll install MySQL Server and MySQL Workbench. MySQL Workbench is a MySQL GUI that we’ll use to create a database with tables for the Scheduler data and to run SQL queries. Download MySQL Server and MySQL Workbench from the [MySQL community downloads page](https://dev.mysql.com/downloads/). If you’re using Windows, you can use the [MySQL Installer for Windows](https://dev.mysql.com/downloads/installer/) to download MySQL products. Use the default configurations when configuring MySQL Server and Workbench. Make sure that you configure the MySQL Server to start at system startup for your convenience.
 
 Open the MySQL Workbench desktop application. Open the local instance of the MySQL Server that you configured.
 
@@ -120,7 +120,7 @@ You’ll be able to view the example resources data by running the following que
 SELECT * FROM resources;
 ```
 
-## Set up the back end server
+## Set up the backend server
 
 Install the dependencies by running the following command:
 

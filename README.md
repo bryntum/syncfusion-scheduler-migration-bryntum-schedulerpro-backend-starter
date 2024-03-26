@@ -1,23 +1,27 @@
-# Migrate from Syncfusion Scheduler to Bryntum Scheduler Pro - backend starter repository
+# Migrate from Syncfusion Scheduler to Bryntum Scheduler Pro: Backend starter repository
 
-## Setup a MySQL database locally
+## Set up a MySQL database locally
 
-We’ll install MySQL Server and MySQL Workbench. MySQL Workbench is a MySQL GUI that we’ll use to create a database with tables for the Scheduler data and to run SQL queries. Download MySQL Server and MySQL Workbench from the [MySQL community downloads page](https://dev.mysql.com/downloads/). If you’re using Windows, you can use the [MySQL Installer for Windows](https://dev.mysql.com/downloads/installer/) to download MySQL products. Use the default configurations when configuring MySQL Server and Workbench. Make sure that you configure the MySQL Server to start at system startup for your convenience.
+We'll use the MySQL Workbench GUI to create a database with tables for the scheduler data and to run queries.
+
+Download MySQL Server and MySQL Workbench from the [MySQL community downloads page](https://dev.mysql.com/downloads/). If you’re using Windows, you can use the [MySQL Installer for Windows](https://dev.mysql.com/downloads/installer/) to download the MySQL products.
+
+Install MySQL Server and MySQL Workbench using the default configurations. Configure the MySQL Server to start at system startup for your convenience.
 
 Open the MySQL Workbench desktop application. Open the local instance of the MySQL Server that you configured.
 
-We’ll write our MySQL queries in the query tab and execute the queries by pressing the yellow lightning bolt button.
+Write MySQL queries in the query tab and execute the queries by pressing the yellow lightning bolt button.
 
 ### Create a MySQL database for the Syncfusion Scheduler data: Adding tables and example data
 
-Let’s run some MySQL queries in MySQL Workbench to create, use, and populate a database for our Syncfusion Scheduler data. Execute the following query to create a database called syncfusion_scheduler:
+Execute the following query to create a database called `syncfusion_scheduler`:
 
 
 ```sql
 CREATE DATABASE syncfusion_scheduler;
 ```
 
-Run the following query so that we set our newly created database for use:
+Set the newly created database for use:
 
 ```sql
 USE syncfusion_scheduler;
@@ -90,7 +94,7 @@ VALUES
     (11, 'Lunch', '2024-04-15T12:00:00', '2024-04-15T13:00:00', false, '[1, 2, 3, 4, 5, 6]', NULL, 'FREQ=DAILY;INTERVAL=1;', true);
 ```
 
-The last event is a block event, the `IsBlock` property is set to `true`. It prevents event creation in the time range of the block event.
+The last event is a block event with the `IsBlock` property set to `true` to prevent event creation in the time range of the block event.
 
 Add some example resources data to the resources table:
 
@@ -108,13 +112,13 @@ VALUES
     ( "Chris", "#5c6bc0" );
 ```
 
-You’ll be able to view the example appointments data by running the following query:
+View the example appointments data by running the following query:
 
 ```sql
 SELECT * FROM appointments;
 ```
 
-You’ll be able to view the example resources data by running the following query:
+View the example resources data by running the following query:
 
 ```sql
 SELECT * FROM resources;
@@ -122,7 +126,7 @@ SELECT * FROM resources;
 
 ## Set up the backend server
 
-Install the dependencies by running the following command:
+Install the dependencies with the following command:
 
 ```bash
 npm install
@@ -130,7 +134,7 @@ npm install
 
 In the `utils/dbConnect.js` file, the Express server uses the [MySQL2](https://github.com/sidorares/node-mysql2) library to connect to a MySQL database. A connection pool is created using the MySQL2 `createPool` method. The connection pool is exported into the `server.js` file where it's used to run database queries for CRUD operations using the `query` method.
 
-Now create a `.env` file in the root folder and add the following lines for connecting to the MySQL database that we’ll create:
+Create a `.env` file in the root folder and add the following lines for connecting to the MySQL database that we’ll create:
 
 ```
 HOST=localhost
